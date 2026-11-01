@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- QEMU has no GPU: the window server draws everything with its software
+	     rasterizer under TCG. Blur (transparency) and parallax (motion) are the
+	     most expensive effects there, and at ~5 fps the system is barely usable.
+	     Turn them off from the first boot, as Settings > Accessibility >
+	     Display & Text Size > Reduce Transparency and Accessibility > Motion >
+	     Reduce Motion would. Baked here because tapping through Settings at
+	     1 fps is not a reasonable way to get there. -->
+	<key>ReduceTransparencyEnabled</key>
+	<true/>
+	<key>ReduceMotionEnabled</key>
+	<true/>
+</dict>
+</plist>

@@ -1,0 +1,12 @@
+hakios-xnu-kernel/userland/*.apfs
+hakios-xnu-kernel/qemu/ram.img
+hakios-xnu-kernel/qemu/payload.bin
+hakios-xnu-kernel/qemu/vars.fd
+hakios-xnu-kernel/logs/
+hakios-xnu-kernel/xnu-src/
+hakios-xnu-kernel/sysimage/rootfs*
+hakios-xnu-kernel/sysimage/cryptex/
+hakios-xnu-kernel/sysimage/cryptex-app/
+hakios-xnu-kernel/sysimage/20F66__*/
+hakios-xnu-kernel/fw-*/
+hakios-xnu-kernel/Mu-Silicium/

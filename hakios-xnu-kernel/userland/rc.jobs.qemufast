@@ -1,0 +1,17 @@
+# Commands run by the launchd job com.hakios.demo (see com.hakios.demo.plist).
+# QEMU-fast preset: the same smoke checks as rc.jobs, WITHOUT the 240 s
+# background cpu_test that steals TCG time from the UI while you use it.
+# Use with: RC_JOBS=rc.jobs.qemufast userland/build.sh  (or REST=1 RC_JOBS=... for images only)
+/redwood/bin/hello_dyn started by launchd
+/redwood/bin/svc_test
+/redwood/bin/surf_test
+/bin/ps -A
+/redwood/bin/mg_test
+# one short CPU check, foreground, no background burn
+/redwood/bin/cpu_test
+# open the Settings application twice after the boot has settled (see
+# com.hakios.openapp in src/inject_sb.c): whether applications open at all
+# when taps on their icons do not. In the background, from 12 minutes on.
+/redwood/bin/rwtouch wait 720 notify com.hakios.openapp wait 300 notify com.hakios.openapp &
+# write down every window for the tap-eating overlay hunt (com.hakios.layers)
+/redwood/bin/rwtouch wait 750 notify com.hakios.layers &
